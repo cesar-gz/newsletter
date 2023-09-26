@@ -1,0 +1,39 @@
+# Dependency directories
+node_modules/
+
+# Compiled output
+dist/
+*.d.ts
+*.js
+*.js.map
+*.js.LICENSE.txt
+
+# Logs and logs data
+logs
+*.log
+
+# System and editor files
+.sass-cache/
+.DS_Store
+Thumbs.db
+.idea/
+
+# Environment configuration
+src/environments/environment.ts
+src/environments/environment.prod.ts
+
+# IDE-specific files (Visual Studio Code, WebStorm, etc.)
+.vscode/
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.idea
+.project
+
+# Miscellaneous
+npm-debug.log
+yarn-error.log
+coverage/
+*.swp
