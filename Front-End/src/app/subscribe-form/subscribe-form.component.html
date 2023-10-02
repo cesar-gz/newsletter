@@ -1,64 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
+<div class="container">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Basic Form</title>
-</head>
+  <p class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ </p>
+  <h1 class="title">Contact Information</h1>
 
-<body>
-  <h1>Contact Information</h1>
-  <form action="#" method="post">
+  <div class="form-layout">
+    <form action="#" method="post">
 
-    <!-- Name -->
-    <div>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-    </div>
+      <div>
+        <label class="checkbox" for="name">Name:</label>
+        <input class="checkbox" type="text" id="name" name="name" placeholder="Bob Bobbyton" required>
 
-    <!-- Email Address -->
-    <div>
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" name="email" required>
-    </div>
+        <label class="checkbox" for="email">Email Address:</label>
+        <input class="checkbox" type="email" id="email" name="email" placeholder="email@me.com" required>
+      </div>
 
-    <!-- Checkboxes -->
-    <div>
-      <h2>Interests:</h2>
-      <label for="interest1"><input type="checkbox" id="interest1" name="interests" value="Interest 1"> Interest
-        1</label><br>
-      <label for="interest2"><input type="checkbox" id="interest2" name="interests" value="Interest 2"> Interest
-        2</label><br>
-      <label for="interest3"><input type="checkbox" id="interest3" name="interests" value="Interest 3"> Interest
-        3</label><br>
-      <label for="interest4"><input type="checkbox" id="interest4" name="interests" value="Interest 4"> Interest
-        4</label><br>
-      <label for="interest5"><input type="checkbox" id="interest5" name="interests" value="Interest 5"> Interest
-        5</label><br>
-      <label for="interest6"><input type="checkbox" id="interest6" name="interests" value="Interest 6"> Interest
-        6</label><br>
-      <label for="interest7"><input type="checkbox" id="interest7" name="interests" value="Interest 7"> Interest
-        7</label><br>
-      <label for="interest8"><input type="checkbox" id="interest8" name="interests" value="Interest 8"> Interest
-        8</label><br>
-      <label for="interest9"><input type="checkbox" id="interest9" name="interests" value="Interest 9"> Interest
-        9</label><br>
-      <label for="interest10"><input type="checkbox" id="interest10" name="interests" value="Interest 10"> Interest
-        10</label><br>
-      <label for="interest11"><input type="checkbox" id="interest11" name="interests" value="Interest 11"> Interest
-        11</label><br>
-      <label for="interest12"><input type="checkbox" id="interest12" name="interests" value="Interest 12"> Interest
-        12</label><br>
-    </div>
+      <h2 class="subtitle">Catergories:</h2>
 
-    <!-- Submit and Reset Buttons -->
-    <div>
-      <button type="submit">Submit</button>
-      <button type="reset">Reset</button>
-    </div>
+      <div class="grid">
+        <label for="interest1"><input class="checkbox"type="checkbox" id="interest1" name="interests" value="Interest 1"> World News
+          </label>
+        <label for="interest2"><input class="checkbox" type="checkbox" id="interest2" name="interests" value="Interest 2"> U.S. News
+          </label>
+        <label for="interest3"><input class="checkbox" type="checkbox" id="interest3" name="interests" value="Interest 3"> Politics
+          </label>
+        <label for="interest4"><input class="checkbox" type="checkbox" id="interest4" name="interests" value="Interest 4"> Business
+          </label>
+        <label for="interest5"><input class="checkbox" type="checkbox" id="interest5" name="interests" value="Interest 5"> Science
+          </label>
+        <label for="interest6"><input class="checkbox" type="checkbox" id="interest6" name="interests" value="Interest 6"> Health
+          </label>
+        <label for="interest7"><input class="checkbox" type="checkbox" id="interest7" name="interests" value="Interest 7"> Sports
+          </label>
+        <label for="interest8"><input class="checkbox" type="checkbox" id="interest8" name="interests" value="Interest 8"> Gaming
+          </label>
+        <label for="interest9"><input class="checkbox" type="checkbox" id="interest9" name="interests" value="Interest 9"> Finance
+          </label>
+        <label for="interest10"><input class="checkbox" type="checkbox" id="interest10" name="interests" value="Interest 10"> Tech
+          </label>
+      </div>
 
-  </form>
-</body>
+      <div class="button-row">
+        <button class="checkbox" type="submit">Subscribe</button>
+        <button class="checkbox" type="submit">Unsubscribe</button>
+        <button class="checkbox" type="reset">Reset</button>
+      </div>
 
-</html>
+    </form>
+  </div>
+
+</div>
