@@ -17,7 +17,7 @@ def getDb():
 
 # retrieve all user ids
 @router.get("/users/ids", tags=['User'])
-def getAllUserIds(db:sqlite3.Connection = Depends(getDb)):
+def get_all_user_ids(db:sqlite3.Connection = Depends(getDb)):
     cursor = db.cursor()
 
     # fetch user data from db
@@ -37,7 +37,7 @@ def getAllUserIds(db:sqlite3.Connection = Depends(getDb)):
 
 # get a users email
 @router.get("/users/{userId}/email", tags=['User'])
-def getUsersEmail(userId: int, db: sqlite3.Connection = Depends(getDb)):
+def get_users_email(userId: int, db: sqlite3.Connection = Depends(getDb)):
     cursor = db.cursor()
 
     # fetch user data from db
@@ -58,15 +58,15 @@ def getUsersEmail(userId: int, db: sqlite3.Connection = Depends(getDb)):
 
 # add a user to the database
 @router.post("/users/subscribe/{userId}", tags=['User'])
-def addUser(userId: int, name: str, email: str, db: sqlite3.Connection = Depends(getDb)):
+def add_user(userId: int, name: str, email: str, db: sqlite3.Connection = Depends(getDb)):
     cursor = db.cursor()
 
     # check if user already exists
-    cursor.execute("SELECT * FROM user WHERE id = ?", (userId,))
+    cursor.execute("SELECT * FROM user WHERE userId = ?", (userId,))
     userData = cursor.fetchone()
 
     if userData:
-      raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User already exists. Use a new userId.")
+      raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="User already exists. Use a new userId.")
 
     cursor.execute(
         """
@@ -87,7 +87,7 @@ def addUser(userId: int, name: str, email: str, db: sqlite3.Connection = Depends
 
 # get all news topic ids
 @router.get("/news/topics", tags=['News'])
-def getTopics(db: sqlite3.Connection = Depends(getDb)):
+def get_topics(db: sqlite3.Connection = Depends(getDb)):
     cursor = db.cursor()
 
     # fetch news data from db
