@@ -119,7 +119,7 @@ def populateDatabase():
 
     usersTable = """ CREATE TABLE IF NOT EXISTS user (
                         userId integer NOT NULL PRIMARY KEY UNIQUE,
-                        name text NOT NULL
+                        name text NOT NULL,
                         email text NOT NULL
                  ); """
     createTable(conn, usersTable)
@@ -132,6 +132,7 @@ def populateDatabase():
 
     wantsTable = """ CREATE TABLE IF NOT EXISTS wants (
                         id integer NOT NULL PRIMARY KEY UNIQUE,
+                        userId integer,
                         wantedNews integer,
                         FOREIGN KEY(userId) REFERENCES user(userId)
                  ); """
@@ -139,13 +140,14 @@ def populateDatabase():
 
     stagingTable = """ CREATE TABLE IF NOT EXISTS staging (
                         id integer NOT NULL PRIMARY KEY UNIQUE,
-                        newsletter text NOT NULL
+                        userId integer,
+                        newsletter text NOT NULL,
                         FOREIGN KEY(userId) REFERENCES user(userId)
                  ); """
     createTable(conn, stagingTable)
 
     print("Tables created successfully.")
-    print("Beginn populating data into tables...")
+    print("Begin populating data into tables...")
 
     # start inserting data into tables
     cursor = conn.cursor()
@@ -155,7 +157,7 @@ def populateDatabase():
             INSERT INTO user (userId, name, email)
             VALUES (?, ?, ?)
             """,
-            (users.userId, users.name, users.email)
+            (u.userId, u.name, u.email)
         )
 
     for n in newsTopics:
@@ -164,7 +166,7 @@ def populateDatabase():
             INSERT INTO news (id, topic)
             VALUES (?, ?)
             """,
-            (newsTopics.id, newsTopics.topic)
+            (n.id, n.topic)
         )
 
     for w in userWants:
@@ -173,7 +175,7 @@ def populateDatabase():
             INSERT INTO wants (id, userId, wantedNews)
             VALUES (?, ?, ?)
             """,
-            (userWants.id, userWants.userId, userWants.topics)
+            (w.id, w.userId, w.topics[0].id)
         )
 
     for r in readyToShip:
@@ -182,7 +184,7 @@ def populateDatabase():
             INSERT INTO staging (id, userId, newsletter)
             VALUES (?, ?, ?)
             """,
-            (readyToShip.id, readyToShip.userId, readyToShip.newsletter)
+            (r.id, r.userId, r.newsletter)
         )
 
     print("Database finished populating.")
