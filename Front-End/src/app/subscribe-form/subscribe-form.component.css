@@ -46,6 +46,10 @@
         margin-right: 8px;
     }
 
+    .checkbox:hover {
+      cursor: pointer;
+    }
+
     .button-row .checkbox{
         background-color: rgb(227, 185, 122);
         text-decoration: underline;
@@ -62,5 +66,9 @@
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
+    }
+
+    .button-row .checkbox:hover{
+        cursor: pointer;
     }
 }

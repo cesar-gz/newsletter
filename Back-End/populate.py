@@ -1,6 +1,6 @@
 import sqlite3
 import os
-from schemas import User, News, Wants, Staging
+from schema import User, News, Wants, Staging
 
 """ create sample data to test/query the database with """
 
@@ -36,31 +36,31 @@ newsTopics = [
 
 userWants = [
     Wants(id=1,
-          userId=1, 
+          userId=1,
           topics=[
               News(id=1, topic="World News"),
-              News(id=9, topic="Sports"), 
+              News(id=9, topic="Sports"),
             ]
           ),
     Wants(id=2,
-          userId=4, 
+          userId=4,
           topics=[
               News(id=2, topic="U.S. News"),
-              News(id=5, topic="Business"), 
+              News(id=5, topic="Business"),
             ]
           ),
     Wants(id=3,
-          userId=7, 
+          userId=7,
           topics=[
               News(id=4, topic="Democratic Politics"),
-              News(id=6, topic="Science"), 
+              News(id=6, topic="Science"),
             ]
           ),
     Wants(id=4,
-          userId=11, 
+          userId=11,
           topics=[
               News(id=10, topic="Gaming"),
-              News(id=12, topic="Technology"), 
+              News(id=12, topic="Technology"),
             ]
           )
 ]
@@ -146,7 +146,7 @@ def populateDatabase():
 
     print("Tables created successfully.")
     print("Beginn populating data into tables...")
-    
+
     # start inserting data into tables
     cursor = conn.cursor()
     for u in users:
@@ -166,7 +166,7 @@ def populateDatabase():
             """,
             (newsTopics.id, newsTopics.topic)
         )
-    
+
     for w in userWants:
         cursor.execute(
             """
@@ -184,7 +184,7 @@ def populateDatabase():
             """,
             (readyToShip.id, readyToShip.userId, readyToShip.newsletter)
         )
-    
+
     print("Database finished populating.")
 
     conn.commit()
