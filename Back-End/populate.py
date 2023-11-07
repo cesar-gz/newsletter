@@ -5,18 +5,18 @@ from schema import User, News, Wants, Staging
 """ create sample data to test/query the database with """
 
 users = [
-    User(userId=1, name="James", email="james@example.com"),
-    User(userId=2, name="Mary", email="mary@example.com"),
-    User(userId=3, name="Robert", email="robert@example.com"),
-    User(userId=4, name="Linda", email="linda@example.com"),
-    User(userId=5, name="Michael", email="michael@example.com"),
-    User(userId=6, name="Elizabeth", email="elizabeth@example.com"),
-    User(userId=7, name="David", email="david@example.com"),
-    User(userId=8, name="Jennifer", email="jennifer@example.com"),
-    User(userId=9, name="Richard", email="richard@example.com"),
-    User(userId=10, name="Michelle", email="michelle@example.com"),
-    User(userId=11, name="Brian", email="brian@example.com"),
-    User(userId=12, name="Kimberly", email="kimberly@example.com"),
+    User(userId=1, name="James", email="james@example.com", topics=[1,9]),
+    User(userId=2, name="Mary", email="mary@example.com", topics=[2,5]),
+    User(userId=3, name="Robert", email="robert@example.com", topics=[4,6]),
+    User(userId=4, name="Linda", email="linda@example.com", topics=[10,12]),
+    User(userId=5, name="Michael", email="michael@example.com", topics=[3,7]),
+    User(userId=6, name="Elizabeth", email="elizabeth@example.com", topics=[6,8]),
+    User(userId=7, name="David", email="david@example.com", topics=[8,9]),
+    User(userId=8, name="Jennifer", email="jennifer@example.com", topics=[1,2]),
+    User(userId=9, name="Richard", email="richard@example.com", topics=[1,9,11]),
+    User(userId=10, name="Michelle", email="michelle@example.com", topics=[2,5,12]),
+    User(userId=11, name="Brian", email="brian@example.com", topics=[2,3]),
+    User(userId=12, name="Kimberly", email="kimberly@example.com", topics=[4,6]),
 ]
 
 newsTopics = [
@@ -118,7 +118,7 @@ def populateDatabase():
     print("Creating Tables...")
 
     usersTable = """ CREATE TABLE IF NOT EXISTS user (
-                        userId integer NOT NULL PRIMARY KEY UNIQUE,
+                        userId INTEGER PRIMARY KEY AUTOINCREMENT,
                         name text NOT NULL,
                         email text NOT NULL
                  ); """
@@ -131,7 +131,7 @@ def populateDatabase():
     createTable(conn, newsTable)
 
     wantsTable = """ CREATE TABLE IF NOT EXISTS wants (
-                        id integer NOT NULL PRIMARY KEY UNIQUE,
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
                         userId integer,
                         wantedNews integer,
                         FOREIGN KEY(userId) REFERENCES user(userId)
@@ -139,7 +139,7 @@ def populateDatabase():
     createTable(conn, wantsTable)
 
     stagingTable = """ CREATE TABLE IF NOT EXISTS staging (
-                        id integer NOT NULL PRIMARY KEY UNIQUE,
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
                         userId integer,
                         newsletter text NOT NULL,
                         FOREIGN KEY(userId) REFERENCES user(userId)
@@ -157,7 +157,7 @@ def populateDatabase():
             INSERT INTO user (userId, name, email)
             VALUES (?, ?, ?)
             """,
-            (u.userId, u.name, u.email)
+            (u.userId, u.name, u.email),
         )
 
     for n in newsTopics:
