@@ -1,77 +1,76 @@
+<h1>Your Personal Newsletter</h1>
+
 <div class="container">
+  <h1 class="title">Getting Started</h1>
 
   <p class="info">
     Subscribe to receive a emailed weekly newsletter that will be have news topics that you choose about.
     Simply fill out the form by providing a name and email address. Then click on which news topics you
-    care about. When you are finshed click the subscribe button. The form you filled out will be go through
-    my database, and a AI assistant will web search reliable news source about the topics you want. Then the 
-    AI assistant will take the tops new of each topic, condense each topic, and format it into a email.
-    Lastly the AI assistant will store the new email in my database and I will send out the emails every week.
+    care about. When you are finished click the subscribe button. If you wish to cancel the weekly email service,
+    simply input your name and email address in the form
+    and click Unsubscribe.
  </p>
- <p class="info">
-    If you wish to cancel the weekly email service, simply input your name and email address in the form
-    and click Unsubscribe. Your data will be removed the database and you will no longer be emailed
- </p>
+
   <h1 class="title">Contact Information</h1>
 
   <div class="form-layout">
-    <form action="#" method="post">
+    <form  #subscriptionForm="ngForm" (ngSubmit)="onSubmit(subscriptionForm)">
 
-      <div>
-        <label class="checkbox" for="name">Name:</label>
-        <input class="checkbox" type="text" id="name" name="name" placeholder="Bob Bobbyton" 
-               autofocus required pattern="[a-zA-Z\s]+">
+      <label class="checkbox" for="name">Name:</label>
+      <input class="checkbox" type="text" id="name" name="name" placeholder="Bob Bobbyton"
+              [(ngModel)]="formData.name"
+              autocomplete="name"
+              autofocus required pattern="[a-zA-Z\s]+">
+      <label class="checkbox" for="email">Email:</label>
+      <input class="checkbox" type="email" id="email" name="email" placeholder="email@example.com"
+              [(ngModel)]="formData.email"
+              autocomplete="email"
+              required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
 
-        <label class="checkbox" for="email">Email Address:</label>
-        <input class="checkbox" type="email" id="email" name="email" placeholder="email@me.com" 
-               required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-      </div>
-
-      <h2 class="subtitle">Catergories:</h2>
+      <h2 class="subtitle">News Topics:</h2>
 
       <div class="grid">
         <label for="interest1">
-          <input class="checkbox"type="checkbox" id="interest1" name="interests" value="Interest 1"> World News
+          <input class="checkbox"type="checkbox" id="interest1" name="interests" value="1" [(ngModel)]="formData.topic1"> World News
         </label>
         <label for="interest2">
-          <input class="checkbox" type="checkbox" id="interest2" name="interests" value="Interest 2"> U.S. News
+          <input class="checkbox" type="checkbox" id="interest2" name="interests" value="2" [(ngModel)]="formData.topic2"> U.S. News
         </label>
         <label for="interest3">
-          <input class="checkbox" type="checkbox" id="interest3" name="interests" value="Interest 3"> Republican Politics
+          <input class="checkbox" type="checkbox" id="interest3" name="interests" value="3" [(ngModel)]="formData.topic3"> Republican Politics
         </label>
         <label for="interest4">
-          <input class="checkbox" type="checkbox" id="interest4" name="interests" value="Interest 4"> Democratic Politics
+          <input class="checkbox" type="checkbox" id="interest4" name="interests" value="4" [(ngModel)]="formData.topic4"> Democratic Politics
         </label>
         <label for="interest5">
-          <input class="checkbox" type="checkbox" id="interest5" name="interests" value="Interest 5"> Business
+          <input class="checkbox" type="checkbox" id="interest5" name="interests" value="5" [(ngModel)]="formData.topic5"> Business
         </label>
         <label for="interest6">
-          <input class="checkbox" type="checkbox" id="interest6" name="interests" value="Interest 6"> Science
+          <input class="checkbox" type="checkbox" id="interest6" name="interests" value="6" [(ngModel)]="formData.topic6"> Science
         </label>
         <label for="interest7">
-          <input class="checkbox" type="checkbox" id="interest7" name="interests" value="Interest 7"> Health
+          <input class="checkbox" type="checkbox" id="interest7" name="interests" value="7" [(ngModel)]="formData.topic7"> Health
         </label>
         <label for="interest8">
-          <input class="checkbox" type="checkbox" id="interest8" name="interests" value="Interest 8"> Religion
+          <input class="checkbox" type="checkbox" id="interest8" name="interests" value="8" [(ngModel)]="formData.topic8"> Religion
         </label>
         <label for="interest9">
-          <input class="checkbox" type="checkbox" id="interest9" name="interests" value="Interest 9"> Sports
+          <input class="checkbox" type="checkbox" id="interest9" name="interests" value="9" [(ngModel)]="formData.topic9"> Sports
         </label>
         <label for="interest10">
-          <input class="checkbox" type="checkbox" id="interest10" name="interests" value="Interest 10"> Gaming
+          <input class="checkbox" type="checkbox" id="interest10" name="interests" value="10" [(ngModel)]="formData.topic10"> Gaming
         </label>
-        <label for="interes11">
-          <input class="checkbox" type="checkbox" id="interest11" name="interests" value="Interest 11"> Finance
+        <label for="interest11">
+          <input class="checkbox" type="checkbox" id="interest11" name="interests" value="11" [(ngModel)]="formData.topic11"> Finance
         </label>
         <label for="interest12">
-          <input class="checkbox" type="checkbox" id="interest12" name="interests" value="Interest 12"> Technology
+          <input class="checkbox" type="checkbox" id="interest12" name="interests" value="12" [(ngModel)]="formData.topic12"> Technology
         </label>
       </div>
 
       <div class="button-row">
         <button class="checkbox" type="submit">Subscribe</button>
-        <button class="checkbox" type="submit">Unsubscribe</button>
-        <button class="checkbox" type="reset">Reset</button>
+        <!-- <button class="checkbox" type="submit">Unsubscribe</button> -->
       </div>
 
     </form>

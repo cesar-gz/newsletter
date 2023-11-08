@@ -1,3 +1,13 @@
+h1 {
+  font-family: 'Cinzel', serif;
+  color: rgb(227, 185, 122);
+  font-size: 45px;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container{
     justify-content: center;
     align-items: center;
@@ -5,24 +15,35 @@
     flex-direction: column;
     font-family: 'Notica', sans-serif;
     color: #fff;
+    letter-spacing: .5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    padding: 20px;
+    border-radius: 1%;
+    border: 1px solid rgb(227, 185, 122);
 }
 
 .title{
     color: rgb(227, 185, 122);
-    font-size: 26px;
+    font-size: 24px;
 }
 
 .info{
-    width: 50%;
     height: auto;
     font-family: 'News Cycle', sans-serif;
-    font-size: 18px;
+    font-size: 17px;
+    text-indent: 2em;
+    padding: 15px;
 }
 
 .form-layout{
     font-family: 'News Cycle', sans-serif;
-    font-size: 20px;
-    width: 50%;
+    font-size: 17px;
+    width: 60%;
 
     justify-content: center;
     align-items: center;
@@ -31,7 +52,7 @@
 
     .subtitle{
         color: rgb(227, 185, 122);
-        font-family: 'Notica', sans-serif;
+        font-family: 'Cinzel', serif;
         font-size: 22px;
     }
 
@@ -47,7 +68,7 @@
     }
 
     .checkbox:hover {
-      cursor: pointer;
+        cursor: pointer;
     }
 
     .button-row .checkbox{
@@ -71,4 +92,28 @@
     .button-row .checkbox:hover{
         cursor: pointer;
     }
+}
+
+@media (max-width: 1370px) {
+  .container {
+    top: 55%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+  }
+}
+
+@media (max-width: 1140px) {
+  .container {
+    top: 70%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    top: 80%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+  }
 }
