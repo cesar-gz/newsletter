@@ -109,6 +109,15 @@ def delete_a_user(userId: int, db: sqlite3.Connection = Depends(getDb)):
     return {"message": "User deleted successfully"}
 
 
+@router.get("/user/lastUserId", tags=["User"])
+def get_last_users_id(db: sqlite3.Connection = Depends(getDb)):
+    cursor = db.cursor()
+
+    cursor.execute("SELECT MAX(userId) FROM user")
+    last_user_id = cursor.fetchone()[0]
+
+    return {"userId": last_user_id}
+
 # ========================================== news ==========================================
 
 # get all news topic ids

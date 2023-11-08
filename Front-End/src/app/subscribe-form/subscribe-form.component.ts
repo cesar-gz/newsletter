@@ -29,27 +29,42 @@ export class SubscribeFormComponent {
       });
       console.log(selectedTopics);
 
-      // create the request body
-      const jsonData = {
-        name: this.formData.name,
-        email: this.formData.email,
-        topics: selectedTopics,
-      };
-      console.log(jsonData)
+      var newUserId: number;
 
-      // Send the JSON data to an API endpoint
-      this.http.post('http://localhost:5000/users/subscribe/', jsonData).subscribe(
+      this.http.get<{ userId: number }>('http://localhost:5000/user/lastUserId').subscribe(
         (response) => {
-          // Handle the API response here
           console.log('API Response:', response);
+          newUserId = response.userId + 1;
 
-          // Reset the form after submission
-          form.resetForm();
+          // create the request body
+          const jsonData = {
+            userId: newUserId,
+            name: this.formData.name,
+            email: this.formData.email,
+            topics: selectedTopics,
+          };
+          console.log(jsonData)
+
+          // Send the JSON data to an API endpoint
+          this.http.post('http://localhost:5000/users/subscribe/', jsonData).subscribe(
+            (response) => {
+              // Handle the API response here
+              console.log('API Response:', response);
+
+              // Reset the form after submission
+              form.resetForm();
+            },
+            (error) => {
+              // Handle API error
+              console.error('API Error:', error);
+            }
+          );
         },
+
         (error) => {
-          // Handle API error
           console.error('API Error:', error);
         }
+
       );
     }
   }
