@@ -85,3 +85,8 @@ settings.ini
 venv/
 env/
 myenv/
+
+output.txt
+
+thoughtProcess.txt
+formatter.py
