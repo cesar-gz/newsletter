@@ -6,11 +6,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SubscribeFormComponent } from './subscribe-form/subscribe-form.component';
+import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
+import { GoodbyePageComponent } from './goodbye-page/goodbye-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SubscribeFormComponent
+    SubscribeFormComponent,
+    ThankYouPageComponent,
+    GoodbyePageComponent
   ],
   imports: [
     BrowserModule,

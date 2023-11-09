@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-subscribe-form',
@@ -10,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class SubscribeFormComponent {
   formData: any = {};
-  constructor(private http: HttpClient) { } // Inject HttpClient
+  constructor(private http: HttpClient, private router: Router) { }
 
   onSubmit(form: NgForm) {
     if (form.valid) {
@@ -53,6 +54,7 @@ export class SubscribeFormComponent {
 
               // Reset the form after submission
               form.resetForm();
+              this.router.navigate(['/thankyou']);
             },
             (error) => {
               // Handle API error
