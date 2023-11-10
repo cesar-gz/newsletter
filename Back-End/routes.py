@@ -54,7 +54,7 @@ def get_a_user_id(name : str, email : str, db:sqlite3.Connection = Depends(getDb
     if not userDataId:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="No user found with that name and email.")
 
-    return userDataId[0]
+    return {"userId" : userDataId[0]}
 
 # get a users information
 @router.get("/users/{userId}", tags=['User'])
