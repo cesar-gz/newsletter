@@ -1,1 +1,9 @@
-
+h1 {
+  font-family: 'Cinzel', serif;
+  color: rgb(227, 185, 122);
+  font-size: 45px;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

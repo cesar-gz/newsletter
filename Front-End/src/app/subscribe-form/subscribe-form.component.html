@@ -1,20 +1,17 @@
-<h1>Your Personal Newsletter</h1>
-
 <div class="container">
   <h1 class="title">Getting Started</h1>
 
   <p class="info">
-    Subscribe to receive a emailed weekly newsletter that will be have news topics that you choose about.
+    Subscribe to receive a emailed weekly newsletter that will be have news topics that you choose.
     Simply fill out the form by providing a name and email address. Then click on which news topics you
     care about. When you are finished click the subscribe button. If you wish to cancel the weekly email service,
-    simply input your name and email address in the form
-    and click Unsubscribe.
+    simply input your name and email address in the form and click Unsubscribe.
  </p>
 
   <h1 class="title">Contact Information</h1>
 
   <div class="form-layout">
-    <form  #subscriptionForm="ngForm" (ngSubmit)="onSubmit(subscriptionForm)">
+    <form  #subscriptionForm="ngForm" (ngSubmit)="onSubscribe(subscriptionForm)">
 
       <label class="checkbox" for="name">Name:</label>
       <input class="checkbox" type="text" id="name" name="name" placeholder="Bob Bobbyton"
@@ -37,10 +34,10 @@
           <input class="checkbox" type="checkbox" id="interest2" name="interests" value="2" [(ngModel)]="formData.topic2"> U.S. News
         </label>
         <label for="interest3">
-          <input class="checkbox" type="checkbox" id="interest3" name="interests" value="3" [(ngModel)]="formData.topic3"> Republican Politics
+          <input class="checkbox" type="checkbox" id="interest3" name="interests" value="3" [(ngModel)]="formData.topic3"> Republican News
         </label>
         <label for="interest4">
-          <input class="checkbox" type="checkbox" id="interest4" name="interests" value="4" [(ngModel)]="formData.topic4"> Democratic Politics
+          <input class="checkbox" type="checkbox" id="interest4" name="interests" value="4" [(ngModel)]="formData.topic4"> Democratic News
         </label>
         <label for="interest5">
           <input class="checkbox" type="checkbox" id="interest5" name="interests" value="5" [(ngModel)]="formData.topic5"> Business
@@ -69,8 +66,8 @@
       </div>
 
       <div class="button-row">
-        <button class="checkbox" type="submit">Subscribe</button>
-        <!-- <button class="checkbox" type="submit">Unsubscribe</button> -->
+        <button class="checkbox" type="button" (click)="onSubscribe(subscriptionForm)">Subscribe</button>
+        <button class="checkbox" type="button" (click)="unsubscribe()">Unsubscribe</button>
       </div>
 
     </form>

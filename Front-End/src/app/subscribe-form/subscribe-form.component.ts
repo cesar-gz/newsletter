@@ -13,11 +13,9 @@ export class SubscribeFormComponent {
   formData: any = {};
   constructor(private http: HttpClient, private router: Router) { }
 
-  onSubmit(form: NgForm) {
+  onSubscribe(form: NgForm) {
     if (form.valid) {
-
-      // check to see if form was received
-      console.log('Form Data:', this.formData);
+      //console.log('Form Data:', this.formData);
 
       const topicCheckboxes = [
         this.formData.topic1, this.formData.topic2, this.formData.topic3, this.formData.topic4,
@@ -28,13 +26,13 @@ export class SubscribeFormComponent {
       topicCheckboxes.forEach((isChecked, index) => {
         if (isChecked) { selectedTopics.push(index + 1); }
       });
-      console.log(selectedTopics);
+      //console.log(selectedTopics);
 
       var newUserId: number;
 
       this.http.get<{ userId: number }>('http://localhost:5000/user/lastUserId').subscribe(
         (response) => {
-          console.log('API Response:', response);
+          //console.log('API Response:', response);
           newUserId = response.userId + 1;
 
           // create the request body
@@ -44,20 +42,16 @@ export class SubscribeFormComponent {
             email: this.formData.email,
             topics: selectedTopics,
           };
-          console.log(jsonData)
+          //console.log(jsonData)
 
           // Send the JSON data to an API endpoint
           this.http.post('http://localhost:5000/users/subscribe/', jsonData).subscribe(
             (response) => {
-              // Handle the API response here
-              console.log('API Response:', response);
-
-              // Reset the form after submission
+              //console.log('API Response:', response);
               form.resetForm();
               this.router.navigate(['/thankyou']);
             },
             (error) => {
-              // Handle API error
               console.error('API Error:', error);
             }
           );
@@ -69,5 +63,10 @@ export class SubscribeFormComponent {
 
       );
     }
+  }
+
+  unsubscribe() {
+    console.log('Gonna fill in this logic later');
+    this.router.navigate(['/goodbye']);
   }
 }
