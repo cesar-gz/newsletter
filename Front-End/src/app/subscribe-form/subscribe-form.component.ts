@@ -52,21 +52,44 @@ export class SubscribeFormComponent {
               this.router.navigate(['/thankyou']);
             },
             (error) => {
-              console.error('API Error:', error);
+              //console.error('API Error:', error);
             }
           );
         },
 
         (error) => {
-          console.error('API Error:', error);
+          //console.error('API Error:', error);
         }
 
       );
     }
   }
 
-  unsubscribe() {
-    console.log('Gonna fill in this logic later');
-    this.router.navigate(['/goodbye']);
+  unsubscribe(form: NgForm) {
+    if (form.valid) {
+
+      this.http.get<{ userId: number }>(`http://localhost:5000/users/id/${this.formData.name}/${this.formData.email}`).subscribe(
+        (response) => {
+          var deleteUserId: number;
+          deleteUserId = response.userId
+
+          this.http.delete(`http://localhost:5000/users/unsubscribe/${deleteUserId}`).subscribe(
+            (response) => {
+              //console.log('API Response:', response);
+              form.resetForm();
+              this.router.navigate(['/goodbye']);
+            },
+            (error) => {
+              //console.error('API Error:', error);
+            }
+          );
+        },
+        (error) => {
+          form.resetForm();
+          this.router.navigate(['/error']);
+          //console.error('API Error:', error);
+        }
+      );
+    }
   }
 }

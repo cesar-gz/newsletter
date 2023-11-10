@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { SubscribeFormComponent } from './subscribe-form/subscribe-form.component';
 import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
 import { GoodbyePageComponent } from './goodbye-page/goodbye-page.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SubscribeFormComponent,
     ThankYouPageComponent,
-    GoodbyePageComponent
+    GoodbyePageComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
