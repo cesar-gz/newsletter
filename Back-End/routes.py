@@ -34,6 +34,27 @@ def get_all_user_ids(db:sqlite3.Connection = Depends(getDb)):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="No users found")
     return {"Users" : userData}
 
+# retrieve a user id
+@router.get("/users/id/{name}/{email}", tags=['User'])
+def get_a_user_id(name : str, email : str, db:sqlite3.Connection = Depends(getDb)):
+    cursor = db.cursor()
+
+    # fetch user ID from db based on name and email
+    cursor.execute(
+        """
+        SELECT userId
+        FROM user
+        WHERE name = ? AND email = ?
+        """,(name, email,)
+    )
+
+    userDataId = cursor.fetchone()
+
+    # check if user exists
+    if not userDataId:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="No user found with that name and email.")
+
+    return userDataId[0]
 
 # get a users information
 @router.get("/users/{userId}", tags=['User'])

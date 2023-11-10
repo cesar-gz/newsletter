@@ -34,44 +34,6 @@ newsTopics = [
     News(id=12, topic="Technology"),
 ]
 
-userWants = [
-    Wants(id=1,
-          userId=1,
-          topics=[
-              News(id=1, topic="World News"),
-              News(id=9, topic="Sports"),
-            ]
-          ),
-    Wants(id=2,
-          userId=4,
-          topics=[
-              News(id=2, topic="U.S. News"),
-              News(id=5, topic="Business"),
-            ]
-          ),
-    Wants(id=3,
-          userId=7,
-          topics=[
-              News(id=4, topic="Democratic Politics"),
-              News(id=6, topic="Science"),
-            ]
-          ),
-    Wants(id=4,
-          userId=11,
-          topics=[
-              News(id=10, topic="Gaming"),
-              News(id=12, topic="Technology"),
-            ]
-          )
-]
-
-readyToShip = [
-    Staging(id=1, userId=1, newsletter="The world is dying."),
-    Staging(id=2, userId=4, newsletter="The world is thriving."),
-    Staging(id=3, userId=7, newsletter="The stock market crashed."),
-    Staging(id=4, userId=11, newsletter="The economy is booming."),
-]
-
 """ set up the database and define SQL calls """
 
 # remove database if it exists before creating and populating it
@@ -167,24 +129,6 @@ def populateDatabase():
             VALUES (?, ?)
             """,
             (n.id, n.topic)
-        )
-
-    for w in userWants:
-        cursor.execute(
-            """
-            INSERT INTO wants (id, userId, wantedNews)
-            VALUES (?, ?, ?)
-            """,
-            (w.id, w.userId, w.topics[0].id)
-        )
-
-    for r in readyToShip:
-        cursor.execute(
-            """
-            INSERT INTO staging (id, userId, newsletter)
-            VALUES (?, ?, ?)
-            """,
-            (r.id, r.userId, r.newsletter)
         )
 
     print("Database finished populating.")
