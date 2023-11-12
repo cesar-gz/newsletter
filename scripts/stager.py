@@ -1,5 +1,4 @@
 """ pip install requests """
-
 import subprocess
 import requests
 
@@ -14,7 +13,7 @@ fileContent = fileContent.split('*')
 fileContent.pop()
 
 # conduct web searches
-for i in range(2):
+for i in range(12):
     arg1 = fileContent[i]
     arg2 = 'newsTopic' + str(i+1) + '.txt'
     command = ['python', scriptPath, arg1, arg2]
@@ -23,7 +22,7 @@ for i in range(2):
 # start adding new files to database
 apiUrl = "http://localhost:5000"
 
-for i in range(2):
+for i in range(12):
   print("sending request " + str(i+1) + "...")
 
   filePath = "output/newsTopic" + str(i+1) + ".txt"
