@@ -19,6 +19,12 @@ for i in range(12):
     command = ['python', scriptPath, arg1, arg2]
     subprocess.run(command)
 
+# format the new files
+scriptPath = 'formatter.py'
+command = []
+command = ['python', scriptPath]
+subprocess.run(command)
+
 # start adding new files to database
 apiUrl = "http://localhost:5000"
 

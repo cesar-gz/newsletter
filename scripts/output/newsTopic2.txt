@@ -1,11 +1,17 @@
-[1]: https://www.usnews.com/ ""
-[2]: https://www.nbcnews.com/us-news ""
-[3]: https://www.cnn.com/us ""
-[4]: https://www.foxnews.com/us ""
+These links below are sources you can read for more information.
+
+[1]: https://www.usnews.com/ 
+[2]: https://www.nbcnews.com/us-news 
+[3]: https://www.cnn.com/us 
+[4]: https://www.foxnews.com/us 
 
 Here are some of the latest top news on U.S. News:
 
-- Alabama mayor told friends he was facing some 'dark days' before he died by suicide. The mayor of Smith Station, Alabama, died of an apparent self-inflicted gunshot wound on Monday, hours after a website published photos of him allegedly wearing women's clothing and makeup. The website claimed that the mayor was having an affair with a transgender woman and threatened to expose more details. The mayor's friends and family said he was a victim of blackmail and harassment[^1^][1].
-- Israel says it will take 'security responsibility' for Gaza after war ends. Prime Minister Benjamin Netanyahu said that Israel will not allow Hamas to rebuild its military infrastructure in Gaza and will maintain its blockade of the coastal enclave. He also said that Israel will seek to prevent Iran from supplying weapons to Hamas and other militant groups. Netanyahu's remarks came as a ceasefire between Israel and Hamas entered its fifth day[^2^][2].
-- What to watch for in today's nationwide elections. Voters across the country are heading to the polls to decide critical races for governor, state legislatures, judicial positions and ballot measures. Some of the key contests include the Virginia governor's race, where Democrat Terry McAuliffe is facing a tight challenge from Republican Glenn Youngkin; the New Jersey governor's race, where Democrat Phil Murphy is seeking a second term against Republican Jack Ciattarelli; and the Minneapolis public safety referendum, where voters will decide whether to replace the city's police department with a new agency[^3^][3].
-- How to Retire Like a Billionaire. Achieving a secure retirement that leaves behind an estate and legacy is possible for anyone who follows some simple steps. Some of the strategies include saving early and often, investing wisely, diversifying your income sources, minimizing taxes, planning for health care costs, and creating a will and trust. By following these tips, you can enjoy a comfortable and fulfilling retirement that also benefits your heirs[^4^][4].
+
+Alabama mayor told friends he was facing some 'dark days' before he died by suicide. The mayor of Smith Station, Alabama, died of an apparent self-inflicted gunshot wound on Monday, hours after a website published photos of him allegedly wearing women's clothing and makeup. The website claimed that the mayor was having an affair with a transgender woman and threatened to expose more details. The mayor's friends and family said he was a victim of blackmail and harassment[1].
+
+Israel says it will take 'security responsibility' for Gaza after war ends. Prime Minister Benjamin Netanyahu said that Israel will not allow Hamas to rebuild its military infrastructure in Gaza and will maintain its blockade of the coastal enclave. He also said that Israel will seek to prevent Iran from supplying weapons to Hamas and other militant groups. Netanyahu's remarks came as a ceasefire between Israel and Hamas entered its fifth day[2].
+
+What to watch for in today's nationwide elections. Voters across the country are heading to the polls to decide critical races for governor, state legislatures, judicial positions and ballot measures. Some of the key contests include the Virginia governor's race, where Democrat Terry McAuliffe is facing a tight challenge from Republican Glenn Youngkin; the New Jersey governor's race, where Democrat Phil Murphy is seeking a second term against Republican Jack Ciattarelli; and the Minneapolis public safety referendum, where voters will decide whether to replace the city's police department with a new agency[3].
+
+How to Retire Like a Billionaire. Achieving a secure retirement that leaves behind an estate and legacy is possible for anyone who follows some simple steps. Some of the strategies include saving early and often, investing wisely, diversifying your income sources, minimizing taxes, planning for health care costs, and creating a will and trust. By following these tips, you can enjoy a comfortable and fulfilling retirement that also benefits your heirs[4].
