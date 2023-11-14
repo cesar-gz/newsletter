@@ -1,12 +1,17 @@
 # Dependency directories
 node_modules/
+npm-debug.log
+yarn-error.log
 
 # Compiled output
 #dist/
 *.d.ts
-*.js
+#*.js
 *.js.map
 *.js.LICENSE.txt
+/tmp
+/out-tsc
+/bazel-out
 
 # Logs and logs data
 logs
@@ -17,6 +22,19 @@ logs
 .DS_Store
 Thumbs.db
 .idea/
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db
 
 # Environment configuration
 src/environments/environment.ts
@@ -32,22 +50,40 @@ src/environments/environment.prod.ts
 .idea
 .project
 .angular
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
 # Miscellaneous
 npm-debug.log
 yarn-error.log
 coverage/
 *.swp
+newsTopic3.txt
+newsTopic4.txt
+newsTopic5.txt
+newsTopic6.txt
+newsTopic7.txt
+newsTopic8.txt
+newsTopic9.txt
+newsTopic10.txt
+newsTopic11.txt
+newsTopic12.txt
 
-.env
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
 
 # Ignore compiled Python files
 __pycache__/
 *.pyc
-
-# Ignore the virtual environment directory (if using virtual environments)
-venv/
-env/
 
 # Ignore system-specific or editor-generated files
 *.DS_Store
@@ -85,14 +121,3 @@ settings.ini
 venv/
 env/
 myenv/
-
-newsTopic3.txt
-newsTopic4.txt
-newsTopic5.txt
-newsTopic6.txt
-newsTopic7.txt
-newsTopic8.txt
-newsTopic9.txt
-newsTopic10.txt
-newsTopic11.txt
-newsTopic12.txt
