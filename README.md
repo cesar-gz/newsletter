@@ -11,6 +11,8 @@ Fill out the form(in progress), click submit, and expect a email in a couple of 
 3) same terminal, run 'ng serve'
 4) go to localhost:4200 on a browser
 
+self note: anytime I finish something on Front-End, rerun `ng build --base-href /newsletter/` to create new deploy doc folder, then git push
+
 ## How to set up the Back-End
 1) open a terminal, create a venv, activate it, then install the requirements
 * `python -m venv myenv`
