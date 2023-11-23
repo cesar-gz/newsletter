@@ -3,8 +3,9 @@
     {"src": "/main.py", "use": "@vercel/python"}
   ],
   "routes": [
-    {"src": "/users/(.*)", "dest": "/routes.py"},
-    {"src": "/news/(.*)", "dest": "/routes.py"},
-    {"src": "/staging/(.*)", "dest": "/routes.py"}
+    {"src": "/(.*)", "dest": "/main.py"},
+    {"src": "/users/(.*)", "dest": "/main.py"},
+    {"src": "/news/(.*)", "dest": "/main.py"},
+    {"src": "/staging/(.*)", "dest": "/main.py"}
   ]
 }
