@@ -7,6 +7,7 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:4200",
+    "https://cesar-gz.github.io",
     "https://cesar-gz.github.io/newsletter/",
 ]
 
