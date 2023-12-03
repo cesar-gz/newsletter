@@ -111,9 +111,13 @@ def create_a_user(userInfo : User, db: sqlite3.Connection = Depends(getDb)):
 
     db.commit()
 
+    name = str(userInfo.name)
+    email = str(userInfo.email)
+    userId = str(lastUserId)
+
     # Trigger an email to be sent. Send the user's name, email, topics as arguments
     command = ['python', '../scripts/new-subscriber.py']
-    subprocess.run(command, userInfo.name, userInfo.email, userInfo.topics)
+    subprocess.run(command, name, email, userId)
 
     return {"message": "User successfully created."}
 

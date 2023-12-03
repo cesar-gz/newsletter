@@ -11,9 +11,13 @@ import sys
 apiUrl = "http://localhost:5000"
 name = sys.argv[1]
 recipient = sys.argv[2] # the user's email
-topics = sys.argv[3]
+user_Id = int(sys.argv[3])
 subject = "Dear " + str(name) + " this is your personal newsletter"
 body = ""
+
+DB_Response = requests.get(f"{apiUrl}/users/{user_Id}")
+response_json = DB_Response.json()
+topics = response_json.get("topics", [])
 
 # get the news topics the user wants
 for topic in topics:
