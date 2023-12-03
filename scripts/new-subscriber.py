@@ -27,7 +27,8 @@ for topic in topics:
   body += str(news) + "\n\n"
 
 # mail man sends email to user
-scriptPath = 'sendEmails.py'
+# this python script file gets called from Back-End, so script path is altered
+scriptPath = '../scripts/sendEmails.py'
 command = ['python', scriptPath, subject, recipient, body]
 subprocess.run(command)
 print("Mail has been sent to user " + str(name))
