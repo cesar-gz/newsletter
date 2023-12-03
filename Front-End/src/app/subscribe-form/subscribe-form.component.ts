@@ -30,7 +30,7 @@ export class SubscribeFormComponent {
 
       var newUserId: number;
 
-      this.http.get<{ userId: number }>('https://newsletter-seven-lyart.vercel.app/user/lastUserId').subscribe(
+      this.http.get<{ userId: number }>('http://76.171.69.216:5000/user/lastUserId').subscribe(
         (response) => {
           //console.log('API Response:', response);
           newUserId = response.userId + 1;
@@ -45,7 +45,7 @@ export class SubscribeFormComponent {
           //console.log(jsonData)
 
           // Send the JSON data to an API endpoint
-          this.http.post('https://newsletter-seven-lyart.vercel.app/users/subscribe/', jsonData).subscribe(
+          this.http.post('http://76.171.69.216:5000/users/subscribe/', jsonData).subscribe(
             (response) => {
               //console.log('API Response:', response);
               form.resetForm();
@@ -68,12 +68,12 @@ export class SubscribeFormComponent {
   unsubscribe(form: NgForm) {
     if (form.valid) {
 
-      this.http.get<{ userId: number }>(`https://newsletter-seven-lyart.vercel.app/users/id/${this.formData.name}/${this.formData.email}`).subscribe(
+      this.http.get<{ userId: number }>(`http://76.171.69.216:5000/users/id/${this.formData.name}/${this.formData.email}`).subscribe(
         (response) => {
           var deleteUserId: number;
           deleteUserId = response.userId
 
-          this.http.delete(`https://newsletter-seven-lyart.vercel.app/users/unsubscribe/${deleteUserId}`).subscribe(
+          this.http.delete(`http://76.171.69.216:5000/users/unsubscribe/${deleteUserId}`).subscribe(
             (response) => {
               //console.log('API Response:', response);
               form.resetForm();
