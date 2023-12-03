@@ -1,5 +1,6 @@
 import contextlib
 import sqlite3
+import subprocess
 
 from fastapi import Depends, HTTPException, APIRouter, status
 from schema import User, Staging
@@ -109,6 +110,10 @@ def create_a_user(userInfo : User, db: sqlite3.Connection = Depends(getDb)):
         )
 
     db.commit()
+
+    # Trigger an email to be sent. Send the user's name, email, topics as arguments
+    command = ['python', '../scripts/new-subscriber.py']
+    subprocess.run(command, userInfo.name, userInfo.email, userInfo.topics)
 
     return {"message": "User successfully created."}
 
