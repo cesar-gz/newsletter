@@ -3,8 +3,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  background-image: url('assets/newsletter-background.jpg'), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-image: url('/assets/newsletter-background.jpg'), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   background-blend-mode: overlay;
   background-size: cover;
 }

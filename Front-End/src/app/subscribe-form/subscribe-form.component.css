@@ -93,6 +93,14 @@ h1 {
     }
 }
 
+@media (max-width: 1570px) {
+  .container {
+    top: 62%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+  }
+}
+
 @media (max-width: 1370px) {
   .container {
     top: 55%;
@@ -103,7 +111,20 @@ h1 {
 
 @media (max-width: 1140px) {
   .container {
-    top: 70%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+  }
+  .form-layout {
+    .checkbox {
+      margin-right: 48px;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .container {
+    top: 82%;
     transform: translate(-50%, -50%);
     width: 60%;
   }
@@ -111,7 +132,21 @@ h1 {
 
 @media (max-width: 768px) {
   .container {
-    top: 80%;
+    top: 85%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+  }
+
+  .form-layout{
+    .checkbox{
+      margin-right: 80px;
+    }
+  }
+}
+
+@media (max-width: 713px) {
+  .container {
+    top: 95%;
     transform: translate(-50%, -50%);
     width: 60%;
   }
